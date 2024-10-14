@@ -7,6 +7,7 @@ const _layout = () => {
     <View style={styles.container}>
       <Image source={Images.settings} style={{height:25, width:25,marginTop:20,alignSelf:'flex-end',marginRight:20}}/>
       <Text> English (US)</Text>
+      <Text>Haffa</Text>
        <Image source={Images.facebook} style={{height:50,width:50,borderRadius:30,borderWidth:1,borderColor:"#000",margin:10}}/>
       <Image source={Images.pic3} style={styles.pic}/> 
       <Text style={{fontSize:20,fontWeight:'bold'}}>Ojogo Mercy</Text>
