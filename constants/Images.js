@@ -1,0 +1,25 @@
+const Images ={
+Avinify: require ('../assets/images/Avinify.png'),
+basket: require ('../assets/images/basket.png'),
+bell: require ('../assets/images/bell.png'),
+face: require ('../assets/images/face.png'),
+fingerprint: require ('../assets/images/fingerprint.png'),
+hand: require ('../assets/images/hand.png'),
+logo: require ('../assets/images/logo.png'),
+phone: require ('../assets/images/phone.png'),
+red: require ('../assets/images/red.png'),
+shoe: require ('../assets/images/shoe.png'),
+shop: require ('../assets/images/shop.png'),
+tv: require ('../assets/images/tv.png'),
+watch: require ('../assets/images/watch.png'),
+woman: require ('../assets/images/woman.png'),
+wristwatch: require ('../assets/images/wristwatch.png'),
+pic: require ('../assets/images/Rectangle 684.png'),
+pic1: require ('../assets/images/Rectangle 685.png'),
+pic2: require ('../assets/images/Rectangle 686.png'),
+pic3: require ('../assets/images/Rectangle 692.png'),
+facebook: require ('../assets/images/facebook.jpg'),
+settings: require ('../assets/images/settings.png'),
+
+};
+export default Images;
