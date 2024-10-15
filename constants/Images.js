@@ -20,6 +20,7 @@ pic2: require ('../assets/images/Rectangle 686.png'),
 pic3: require ('../assets/images/Rectangle 692.png'),
 facebook: require ('../assets/images/facebook.jpg'),
 settings: require ('../assets/images/settings.png'),
+google: require ('../assets/images/google.png'),
 
 };
 export default Images;
