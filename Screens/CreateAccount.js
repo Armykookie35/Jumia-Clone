@@ -18,6 +18,8 @@ const [password,setPassword] = useState('');
   style={styles.input}
   value={name}
   onChangeText={setName}
+  placeholderTextColor={'grey'}
+  placeholder='Enter Name'
    />
 </View>
 <View style={styles.container}>
@@ -26,6 +28,8 @@ const [password,setPassword] = useState('');
   style={styles.input}
   value={name}
   onChangeText={setName}
+  placeholderTextColor={'grey'}
+  placeholder='Enter Name'
    />
 </View>
 <View style={styles.container}>
@@ -34,17 +38,19 @@ const [password,setPassword] = useState('');
   style={styles.input}
   value={password}
   onChangeText={setPassword}
+  placeholderTextColor={'grey'}
+  placeholder='Enter Name'
    />
 </View>
     <TouchableOpacity style={styles.button}>
       <Text style={{color:'white',fontSize:16,fontWeight:'bold',textAlign:'center'}}>Sign Up</Text>
     </TouchableOpacity>
-    <Text style={{ color:'white',fontSize:18,textAlign:'center',margin:10}}>Or</Text>
-    <TouchableOpacity style={[styles.button , {backgroundColor: 'rgba(9, 100, 89, 0.3)',flexDirection:'row'}]}>
+    <Text style={{ color:'white',fontSize:18,textAlign:'center',marginTop:20}}>Or</Text>
+    <TouchableOpacity style={[styles.button , {backgroundColor: 'rgba(9, 100, 89, 0.3)',flexDirection:'row',marginTop:10}]}>
       <Image source={images.google} style={{width:30,height:30, borderRadius:20,marginRight:40}}/>
-      <Text style={{color:'white',fontSize:16,fontWeight:'bold',textAlign:'center'}}>Sign in with Google</Text>
+      <Text style={{color:'white',fontSize:15,fontWeight:'bold',textAlign:'center'}}>Sign in with Google</Text>
     </TouchableOpacity>
-    <Text style={{fontSize:12,margin:10,textAlign:'center',color:'grey'}}> Already have an Account?,<Text style={{color:'white'}}>Sign in</Text></Text>
+    <Text style={{fontSize:12,margin:10,textAlign:'center',color:'grey'}}> Already have an Account?<Text style={{color:'white'}}>  Sign in</Text></Text>
    </SafeAreaView>
   )
 }
@@ -60,11 +66,11 @@ const styles = StyleSheet.create({
   },
   input: {
     padding:10,
-    marginBottom:10,
     backgroundColor:'#096459',
     borderRadius:10,
     backgroundColor: 'rgba(9, 100, 89, 0.3)',
-    color:'white'
+    color:'white',
+    marginTop:10
   },
   button:{
     backgroundColor:'#096459',
