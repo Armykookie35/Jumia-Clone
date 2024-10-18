@@ -23,6 +23,7 @@ facebook: require ('../assets/images/facebook.jpg'),
 settings: require ('../assets/images/settings.png'),
 google: require ('../assets/images/google.png'),
 Jennie: require ('../assets/images/Jennie.jpg'),
+insta: require ('../assets/images/insta.png'),
 
 };
 export default Images;
