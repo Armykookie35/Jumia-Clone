@@ -1,5 +1,6 @@
 const Images ={
 Avinify: require ('../assets/images/Avinify.png'),
+apple: require ('../assets/images/apple.jpg'),
 basket: require ('../assets/images/basket.png'),
 bell: require ('../assets/images/bell.png'),
 face: require ('../assets/images/face.png'),
@@ -21,6 +22,7 @@ pic3: require ('../assets/images/Rectangle 692.png'),
 facebook: require ('../assets/images/facebook.jpg'),
 settings: require ('../assets/images/settings.png'),
 google: require ('../assets/images/google.png'),
+Jennie: require ('../assets/images/Jennie.jpg'),
 
 };
 export default Images;

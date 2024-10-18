@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
   },
   input: {
     padding:10,
+    // marginBottom:10,
     backgroundColor:'#096459',
     borderRadius:10,
     backgroundColor: 'rgba(9, 100, 89, 0.3)',
