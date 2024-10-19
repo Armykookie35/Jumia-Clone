@@ -1,208 +1,135 @@
-import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
-import React from 'react';
-import Database from '../constants/Database';
-import Icon from 'react-native-vector-icons/Feather';
-import Icons from 'react-native-vector-icons/Ionicons';
-import images from '../constants/Images';
-import LinearGradient from 'react-native-linear-gradient';
+import { StyleSheet, Text, View,ScrollView,Image, FlatList, TouchableOpacity } from 'react-native'
+import React from 'react'
+import images from '../constants/Images'
+import { SearchBar } from 'react-native-elements';
+import Icon from'react-native-vector-icons/Entypo';
+import Icons from'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign'
+import Feather from 'react-native-vector-icons/Feather'
+import Database from './../constants/Database';
 
 const _layout = () => {
- const RenderHeader = () =>{
-   return(
-    <View style={{ flexDirection: 'row',flex:1 }}>
-    <View style={styles.imageContainer}>
-      <Image source={images.Jennie} style={styles.profileImage} />
-      <View style={styles.iconContainer}>
-        <Icon name="plus" size={20} color="white" />
-      </View>
-      <Text style={styles.text}>Your Story</Text>
-    </View>
-    
-    <FlatList
-      data={Database}
-      renderItem={({ item }) => {
-        return (
-          <View style={styles.container}>
-            <View style={[styles.Container, { backgroundColor: '#fff', borderColor:'pink' }]}>
-              <Image
-               source={item.image}
-               // source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR491Iz1koxr1MoBB6_Tnllh_IBAZOxlMlfpg&s' }}
-                style={styles.image}
-              />
-            </View>
-            <Text style={styles.text}>{item.description}</Text>
-          </View>
-        );
-      }}
-      horizontal={true}
-    />
-  </View>
-   )
- }
-
-  return (
-    <View style={{ flex: 1,backgroundColor:'#f8f8ff' }}>
-      <View style={{ flexDirection: 'row', marginTop: 30, justifyContent: 'space-between', padding: 10 }}>
-        <Image source={images.insta} style={{height:32,width:120,}}/>
-        <Icon name="chevron-down" size={20} color="#000" style={{marginRight:100,marginTop:8}} />
-       <View style={{flexDirection:'row',justifyContent:'space-between',width:'30%'}}>
-        <TouchableOpacity>
-        <Icon name="plus-square" size={25} color="#000" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Icon name="heart" size={25} color="#" />
-        <View style={{height:7,width:7,backgroundColor:'red',position:'absolute',right:0,borderRadius:10}}/>
-        </TouchableOpacity>
-       
-        <TouchableOpacity>
-        <Icons name="chatbubble-ellipses-outline" size={25} color="#000" />
-        <View style={{height:15,width:15,backgroundColor:'red',position:'absolute',right:0,top:-5,borderRadius:10,}}>
-          <Text style={{color:'white',fontSize:11,textAlign:'center'}}>6</Text>
-        </View>
-        </TouchableOpacity>
-      </View>
-      </View>
-
+  const Header =() => {
+    return(
       <View>
-        <FlatList
-          data={Database}
-          ListHeaderComponent={RenderHeader}
-          renderItem={({ item }) => {
-            return (
-              <View style={{marginTop:20}}>      
-               
-              <View style={styles.header}>
-                <View style={{flexDirection:'row',justifyContent:'space-between',width:'100%',padding:10}} >
-                  <View style={styles.profileContainer}>
-                    <Image source={images.hand} style={styles.profileImage} />                 
-                  </View>
-                  <Text style={{fontSize:14,marginRight:220,marginTop:10,}}>{item.description}</Text>
-                  <Icon name="more-horizontal" size={20} color="#000" />
-                </View>         
-                </View>
-                <View>
-              <Image source={item.image} style={styles.postImage} />
-              </View>
-              <View style={{flexDirection:'row' , justifyContent:'space-between',padding:5}}> 
-              <View  style={{flexDirection:'row' , justifyContent:'space-between',}}>
-              <Icon name="heart" size={30} color="#000" style={{margin:3}} />
-              <Icon name="message-circle" size={30} color="#000" style={{margin:3}} />
-              <Icon name="send" size={30} color="#000" style={{margin:3}} />
-              </View>
-              <Icon name="bookmark" size={30} color="#000"/>
-              </View>
-              <Text style={{marginTop:5,paddingHorizontal:5,fontWeight:'bold'}}>52 Likes</Text>
-              <Text style={{fontWeight:'bold',marginTop:5,paddingHorizontal:5}}>Chrisliwvick</Text>
-              <Text style={{color:'#ccc',paddingHorizontal:5}}>View all 5 comments</Text>
-              </View>
-            );
-          }}
-        />
+         <View style={{flexDirection:'row',padding:10,justifyContent:'space-between',borderBottomWidth:5,borderBottomColor:'#ccc'}}>
+        <Image source={images.Jennie} style={{ height:40,width:40,borderRadius:20}}/>
+        <SearchBar
+        placeholder="Search..."     
+        leftIcon={<Icon name="search" size={24} color="black" />} 
+        inputContainerStyle={styles.searchbar}
+        containerStyle={styles.container}
+      />
+      <TouchableOpacity>
+      <Icon name="squared-plus" size={25} color="grey" style={{marginTop:5}}/>
+      </TouchableOpacity>
+      <TouchableOpacity>
+      <Icons name="chatbubble-ellipses-sharp" size={25} color="grey" style={{marginTop:5}}/>
+      </TouchableOpacity>
       </View>
-    </View>
-  );
-};
+      </View>
 
-export default _layout;
+    )
+  }
+  return (
+    <View style={{flex:1,marginTop:20}}>
+     
+      <FlatList
+        data={Database}
+        ListHeaderComponent={Header}
+        renderItem={({ item }) => {
+         return(
+          <View>
+          <View style={{flexDirection:'row',marginTop:10,paddingHorizontal:10}}>
+           <Image source={images.apple} style={styles.profilepic}/>
+           <View style={{marginLeft:10}}>
+            <Text style={{fontSize:14,fontWeight:'bold'}}>Dr Stephen Akintayo</Text>
+            <Text style={{fontSize:11,}}> Forbes of Africa Leading...</Text>
+            <View style={{flexDirection:'row'}}>
+            <Text style={{color:'grey'}}>41m</Text>
+            <Icon name='globe' color={"grey"}style={{margin:3}} />
+            </View>
+           </View>
+           <TouchableOpacity style={{marginLeft:90,flexDirection:'row'}}>
+           <Icon name="dots-three-vertical"size={17} style={{marginLeft:10,marginRight:10}}/>
+           <Icon name="cross" size={25} style={{marginTop:-5}}/>
+           </TouchableOpacity>
+          </View> 
+          <Text numberOfLines={3} style={{paddingHorizontal:10,marginBottom:15}}>I return all glory to God for the success of this tenure, thanks to everyone that supported me to make this tenure a successful one, Chaplain, Rev’d David Olawuyi, My Disciler, Mr. Chima Ukejianya, the central executives council, the general executives and the workers and to my mothers, brothersa nd sister, God bless you all in Jesus name.
+    We are inducted to service on March 7, 2021,  with the THEME: THE OCCUPANTS, Pastor professor Leye Falohun, 33 executives were inducted out of it were 6 Central executive. Handling over, took place  from 31st of March to 1st of April 2023.
+          </Text>
+          <TouchableOpacity>
+          <Image style={{width:360,height:300} }source={images.land}/>
+          </TouchableOpacity>
+            <View style={{padding:10,flexDirection:'row',justifyContent:'space-between'}}>
+              <View style={{backgroundColor:"blue",height:20,width:20,borderRadius:10,alignItems:'center',justifyContent:'center',}}>
+              <AntDesign name="like1" size={12} color={'white'} />
+            </View>
+            <Text style={{marginLeft:-190}}>8</Text>
+            <Text style={{color:'grey',fontSize:12}}>1 Comment.1 Repost</Text>
+            </View>
+            <Text style={{color:'#ccc',marginTop:-10}}>_____________________________________________________</Text>
+            
+            <View style={{flexDirection:'row',justifyContent:'space-between',padding:10}}>
+              <View style={{flexDirection:'row'}}>
+            <Image source={images.Jennie} style={{ height:30,width:30,borderRadius:20}}/>
+            <AntDesign name="caretdown" style={{marginTop:10}}/>
+            </View>
+            
+            <TouchableOpacity style={{alignItems:'center'}}>
+            <AntDesign name="like1" size={20} />
+            <Text >Like</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{alignItems:'center'}}>
+            <Icons name="chatbubble-ellipses-sharp" size={25}/>
+            <Text >Comment</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{alignItems:'center'}}>
+            <Icon name="retweet" size={20} />
+            <Text >Repost</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={{alignItems:'center'}}>
+            <Feather name="send" size={20} />
+            <Text >Share</Text>
+            </TouchableOpacity>
+            </View>
+
+           </View>
+
+         )
+            
+        }}
+      />
+    
+    </View>
+  )
+}
+
+export default _layout
 
 const styles = StyleSheet.create({
-  data: {
-    fontSize: 15,
-    color: 'black',
-    justifyContent: 'center',
-    alignItems: 'center',
+  searchbar: {
+    width:'80%',
+    height:30,
+    backgroundColor:'$ccc',
+    
   },
   container: {
-    borderRadius: 50,
-    elevation: 1,
-    width: 100,
-    height:100,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#ccc',
+    borderRadius: 10,
+    width:'60%',
+    height:35,
+    borderColor:'#ccc',
     borderWidth:2,
+    justifyContent:'center',
     
-    
-    
+  
   },
-  image: {
-    width: 95,
-    height:95,
-    borderRadius: 50,
-    resizeMode: 'cover',
-    alignSelf:'center',
+  profilepic: {
+    height:50,
+    width:50,
+    borderRadius:25
   },
-  container: {
-    alignItems: 'center',
-  },
-  imageContainer: {
-    position: 'relative',
-    width: 100,
-    height: 100,
-    marginTop:10
-  },
-  profileImage: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 50,  
-    borderWidth: 3,
-    borderColor: '#fff',
-  },
-  iconContainer: {
-    position: 'absolute',
-    right: 0,
-    bottom: 0,
-    backgroundColor: '#007aff', 
-    borderRadius: 15,
-    padding: 2,
-    borderWidth:2,
-    borderColor:'#fff'
-  },
-  text: {
-    fontSize: 15,
-    color: 'black',
-    textAlign:'center'
-  },
-  Container: {
-    borderRadius: 50,
-    borderWidth: 2,
-    alignItems: 'center',
-    height:100,
-    width:100,
-    margin:5,
-    justifyContent:'center'
-  },
-  image: {
-    width:92 ,
-    height:92,
-    borderRadius: 50,
-   },
-   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop:-20
-    
-   
-  },
-  profileContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    height:40,
-    width:40,
-  },
-  postImage: {
-    width: '100%',
-    height: 400,
-    resizeMode: 'cover',
-    backgroundColor:'white'
-    
-  },
-  profileImage: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 50,
-    borderWidth: 1,
-    borderColor: 'red',
-  },
-
-});  
+})

@@ -24,6 +24,8 @@ settings: require ('../assets/images/settings.png'),
 google: require ('../assets/images/google.png'),
 Jennie: require ('../assets/images/Jennie.jpg'),
 insta: require ('../assets/images/insta.png'),
+land: require ('../assets/images/land.jpg'),
+estate: require ('../assets/images/estate.jpg'),
 
 };
 export default Images;
