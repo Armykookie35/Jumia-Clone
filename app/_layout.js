@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View,Image } from 'react-native'
+import { StyleSheet, Text, TextInput, View,Image,ScrollView } from 'react-native'
 import React from 'react'
 import { useState } from 'react'
 import { TouchableOpacity } from 'react-native'
@@ -25,7 +25,7 @@ const PasswordVisibility = () => {
 };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={{fontSize:25,fontWeight:"bold",marginTop:20}}>Create Account</Text>
       <Text style={{fontSize:18,marginTop:10}}>Become a new user</Text>
       <View>
@@ -99,7 +99,7 @@ const PasswordVisibility = () => {
        </View>
        <Text style={{fontSize:13,textAlign:'center',marginTop:15,fontWeight:'bold' }}>By Signing up you agree to the<Text style={{color:'blue'}}>Terms of Service </Text></Text>
        <Text style={{fontSize:13,textAlign:'center',marginTop:15,fontWeight:'bold' }}>Have an account?<Text style={{color:'blue'}}>Sign in</Text></Text>
-    </View>
+    </ScrollView>
   )
 }
 
