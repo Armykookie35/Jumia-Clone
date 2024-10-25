@@ -26,6 +26,7 @@ Jennie: require ('../assets/images/Jennie.jpg'),
 insta: require ('../assets/images/insta.png'),
 land: require ('../assets/images/land.jpg'),
 estate: require ('../assets/images/estate.jpg'),
+applelogo: require ('../assets/images/applelogo.jpg'),
 
 };
 export default Images;
