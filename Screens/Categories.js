@@ -23,7 +23,13 @@ const Categories = ({navigation}) => {
         { id: '6', title: 'Grocery' },
         { id: '7', title: 'Garden & Outdoors' },
         { id: '8', title: 'Automobile' },
-        { id: '9', title: 'Stationery' },
+        { id: '9', title: 'Appliances' },
+        { id: '10', title: 'Camping' },
+        { id: '11', title: 'Home Decor' },
+        { id: '12', title: 'Furniture' },
+        { id: '13', title: 'Black Fridays' },
+        { id: '14', title: 'Weekend Outings' },
+      
       ];
       
 
@@ -75,14 +81,14 @@ const Categories = ({navigation}) => {
                 )}
             />
           <View style={{width:'70%'}}>
-          <View style={{backgroundColor:'#ccc',height:50,alignItems:'center',flexDirection:'row',paddingHorizontal:10,flex:1,width:'100%',justifyContent:'space-between'}}>
+          <View style={{backgroundColor:'#ccc',height:60,alignItems:'center',flexDirection:'row',paddingHorizontal:10,flex:1,width:'100%',justifyContent:'space-between'}}>
                     <Text>ALL PRODUCTS</Text>
                     <Icons name="chevron-right" size={20} color="black" />
                 </View>
                 <FlatList
                   data={Gadgets}
                   numColumns={2}
-                  style={{backgroundColor:'white',marginTop:10}}
+                  style={{backgroundColor:'white'}}
                   
                   renderItem={({ item }) => ( 
                     <View style={{marginLeft:20,height:100,marginTop:10,width:100,alignItems:'center'}}>
@@ -110,8 +116,8 @@ const Categories = ({navigation}) => {
 
             <View style={{flexDirection:'row',justifyContent:'space-between',height:70,padding:20}}>
             <TouchableOpacity style={{alignItems:'center'}} onPress={() => navigation.navigate('HomeScreen')}>
-               <Icon name='home' size={26} color={'#ffa500'}/>
-               <Text style={{color:'#ffa500'}}>Home</Text>
+               <Icon name='home' size={26} color={'black'}/>
+               <Text>Home</Text>
             </TouchableOpacity> 
             <TouchableOpacity style={{alignItems:'center'}} onPress={() => navigation.navigate('Categories')}>
             <Image style={ styles.feed} source={menu}/>
