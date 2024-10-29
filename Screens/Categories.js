@@ -10,6 +10,7 @@ import feed from '../assets/images/feed.png'
 import menu from '../assets/images/menu.png'
 import help from '../assets/images/help.png'
 import Images from '@/constants/Images';
+import GadImages from './../constants/Flatlists/GadImages';
 
 
 
@@ -85,7 +86,7 @@ const Categories = ({navigation}) => {
                     <Text>ALL PRODUCTS</Text>
                     <Icons name="chevron-right" size={20} color="black" />
                 </View>
-                <FlatList
+                {/* <FlatList
                   data={Gadgets}
                   numColumns={2}
                   style={{backgroundColor:'white'}}
@@ -96,9 +97,48 @@ const Categories = ({navigation}) => {
                       <Text style={{fontSize:12}}>{item.title}</Text>
                  
                     </View>
-                )}
+                )}                
+                /> */}
+                <ScrollView style={{backgroundColor:'#f8f8f8'}}>
+                <View style={{marginTop:3,backgroundColor:'#fff'}}>
+                    <View style={{height:40,borderBottomWidth:1,borderColor:'#f8f8f8',alignItems:'center',flexDirection:'row',paddingHorizontal:10,flex:1,width:'100%',justifyContent:'space-between'}}>
+                    <Text style={{fontSize:14,}}>APPLIANCES</Text>
+                </View>
+                <View style={{flexDirection:'row',justifyContent:'space-between',height:150,padding:15,alignItems:'center',paddingHorizontal:40}}>
+                <Image source={GadImages[1]} style={{height:70,width:70,borderRadius:10}}/>
+                   <Image source={GadImages[6]} style={{height:70,width:70,borderRadius:10}}/>
+                </View>
+                </View>
+                <View style={{marginTop:3,backgroundColor:'#fff'}}>
+                <View style={{height:40,borderBottomWidth:1,borderColor:'#f8f8f8',alignItems:'center',flexDirection:'row',paddingHorizontal:10,flex:1,width:'100%',justifyContent:'space-between'}}>
+                    <Text style={{fontSize:14}}>ELECTRONICS</Text>
+                </View>
+                <View style={{flexDirection:'row',justifyContent:'space-between',height:150,paddingHorizontal:20,alignItems:'center'}}>
+                <Image source={GadImages[2]} style={{height:70,width:70,borderRadius:10}}/>
+                   <Image source={GadImages[4]} style={{height:70,width:70,borderRadius:10}}/>
+                   <Image source={GadImages[4]} style={{height:70,width:70,borderRadius:10}}/>
+                </View>
                   
-                />
+                </View>
+                <View style={{marginTop:3,backgroundColor:'#fff'}}>
+                    <View style={{height:40,alignItems:'center',flexDirection:'row',paddingHorizontal:10,width:'100%',justifyContent:'space-between'}}>
+                    <Text style={{fontSize:14}}>GADGETS AND GAMING</Text>
+                </View>
+                <View style={{flexDirection:'row',justifyContent:'space-between',height:150,padding:15,alignItems:'center'}}>
+                <Image source={GadImages[3]} style={{height:70,width:70,borderRadius:10}}/>
+                   <Image source={GadImages[5]} style={{height:70,width:70,borderRadius:10}}/>
+                   <Image source={GadImages[7]} style={{height:70,width:70,borderRadius:10}}/>
+                </View>
+                </View>
+                <View style={{marginTop:3,backgroundColor:'#fff'}}>
+                    <View style={{height:40,borderBottomWidth:1,borderColor:'#f8f8f8',alignItems:'center',flexDirection:'row',paddingHorizontal:10,flex:1,width:'100%',justifyContent:'space-between'}}>
+                    <Text style={{fontSize:14}}>MADE FOR YOU</Text>
+                </View>
+                <View style={{flexDirection:'row',justifyContent:'space-between',height:150,padding:15,alignItems:'center'}}>
+                <Image source={GadImages[8]} style={{height:70,width:70,borderRadius:10}}/>
+                </View>
+                </View>
+                </ScrollView>
                  </View>
             {/* <View style={styles.content}>
                 {selectedGadget ? (
